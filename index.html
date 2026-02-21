@@ -60,6 +60,67 @@
       color: #58a6ff;
     }
 
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 24px;
+      height: 3px;
+      background: #e6edf3;
+      margin: 4px 0;
+      border-radius: 3px;
+      transition: all 0.3s;
+      display: block;
+    }
+
+    .nav-toggle.active span:nth-child(1) {
+      transform: rotate(45deg) translate(10px, 10px);
+    }
+
+    .nav-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav-toggle.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(8px, -8px);
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background: rgba(11, 15, 23, 0.95);
+        flex-direction: column;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .nav-links.active {
+        max-height: 300px;
+      }
+
+      .nav-links a {
+        margin: 0;
+        padding: 12px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        display: block;
+      }
+    }
+
     .hero {
       height: 100vh;
       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
@@ -191,7 +252,12 @@
   <div class="container">
     <nav>
       <div class="logo">AI FUTURE TRENDZ</div>
-      <div class="nav-links">
+      <button class="nav-toggle" id="navToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="nav-links" id="navLinks">
         <a href="#">Home</a>
         <a href="#">Articles</a>
         <a href="#">Trends</a>
@@ -260,6 +326,24 @@
 <footer>
   © 2026 AI Future Trendz. All rights reserved.
 </footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+
+  navToggle.addEventListener('click', () => {
+    navToggle.classList.toggle('active');
+    navLinks.classList.toggle('active');
+  });
+
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navToggle.classList.remove('active');
+      navLinks.classList.remove('active');
+    });
+  });
+</script>
 
 </body>
 </html>
