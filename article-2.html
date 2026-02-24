@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Article | Why ChatGPT Scaled So Fast</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -53,7 +55,8 @@
     }
 
     nav { display: flex; align-items: center; min-height: var(--header-height); }
-    .logo { color: var(--text); text-decoration: none; font-weight: 700; font-size: 18px; }
+    .logo { display: inline-flex; align-items: center; gap: 10px; color: var(--text); text-decoration: none; font-weight: 700; font-size: 18px; }
+    .logo img { width: 118px; height: auto; display: block; flex-shrink: 0; }
     .right-controls { margin-left: auto; display: flex; align-items: center; gap: 20px; }
     .back-link {
       color: var(--muted);
@@ -128,7 +131,7 @@
   <header>
     <div class="container">
       <nav>
-        <a href="index.html" class="logo">AI FUTURE TRENDZ</a>
+        <a href="index.html" class="logo" aria-label="AI Future Trendz home"><img src="assets/aft-logo.svg" alt="AI Future Trendz logo" /></a>
         <div class="right-controls">
           <a class="back-link" href="articles.html">← Back to Articles</a>
           <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
