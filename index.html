@@ -6,6 +6,30 @@
   <title>AI Future Trendz</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --link: #2563eb;
+      --card-bg: #f9fafb;
+      --header-bg: rgba(255, 255, 255, 0.92);
+      --header-border: rgba(0, 0, 0, 0.1);
+      --hero-overlay-start: rgba(255, 255, 255, 0.45);
+      --hero-overlay-end: rgba(255, 255, 255, 0.6);
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e5e5e5;
+      --text-secondary: #aaaaaa;
+      --link: #60a5fa;
+      --card-bg: #1e1e1e;
+      --header-bg: rgba(18, 18, 18, 0.92);
+      --header-border: rgba(255, 255, 255, 0.12);
+      --hero-overlay-start: rgba(0, 0, 0, 0.62);
+      --hero-overlay-end: rgba(0, 0, 0, 0.72);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -14,19 +38,21 @@
     }
 
     body {
-      background: #0b0f17;
-      color: #e6edf3;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
 
     header {
       position: fixed;
       width: 100%;
       top: 0;
-      background: rgba(11, 15, 23, 0.9);
+      background: var(--header-bg);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--header-border);
       z-index: 1000;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .container {
@@ -45,19 +71,37 @@
     .logo {
       font-weight: 700;
       font-size: 20px;
-      color: #58a6ff;
+      color: var(--link);
     }
 
     .nav-links a {
       margin-left: 24px;
       text-decoration: none;
-      color: #e6edf3;
+      color: var(--text);
       font-weight: 500;
       transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: #58a6ff;
+      color: var(--link);
+    }
+
+    .theme-toggle {
+      margin-left: 16px;
+      border: 1px solid var(--header-border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      background: var(--card-bg);
     }
 
     .nav-toggle {
@@ -72,7 +116,7 @@
     .nav-toggle span {
       width: 24px;
       height: 3px;
-      background: #e6edf3;
+      background: var(--text);
       margin: 4px 0;
       border-radius: 3px;
       transition: all 0.3s;
@@ -101,12 +145,12 @@
         top: 60px;
         left: 0;
         right: 0;
-        background: rgba(11, 15, 23, 0.95);
+        background: var(--header-bg);
         flex-direction: column;
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-out;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
+        border-bottom: 1px solid var(--header-border);
       }
 
       .nav-links.active {
@@ -116,14 +160,19 @@
       .nav-links a {
         margin: 0;
         padding: 12px 20px;
-        border-bottom: 1px solid rgba(255,255,255,0.05);
+        border-bottom: 1px solid var(--header-border);
         display: block;
+      }
+
+      .theme-toggle {
+        margin-left: auto;
+        margin-right: 12px;
       }
     }
 
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)),
+      background: linear-gradient(var(--hero-overlay-start), var(--hero-overlay-end)),
         url('https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1920');
       background-size: cover;
       background-position: center;
@@ -144,7 +193,7 @@
 
     .hero p {
       font-size: 20px;
-      color: #9da7b3;
+      color: var(--text-secondary);
       margin-bottom: 24px;
     }
 
@@ -181,7 +230,7 @@
     }
 
     .card {
-      background: #161b22;
+      background: var(--card-bg);
       border-radius: 10px;
       overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
@@ -208,12 +257,12 @@
     }
 
     .card-content p {
-      color: #9da7b3;
+      color: var(--text-secondary);
       font-size: 14px;
     }
 
     .newsletter {
-      background: #161b22;
+      background: var(--card-bg);
       text-align: center;
       border-radius: 10px;
       padding: 40px;
@@ -228,10 +277,10 @@
     }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid var(--header-border);
       padding: 20px;
       text-align: center;
-      color: #9da7b3;
+      color: var(--text-secondary);
     }
 
     @media (max-width: 600px) {
@@ -247,6 +296,7 @@
   </style>
 </head>
 <body>
+<script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');</script>
 
 <header>
   <div class="container">
@@ -257,6 +307,7 @@
         <span></span>
         <span></span>
       </button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
       <div class="nav-links" id="navLinks">
         <a href="#">Home</a>
         <a href="articles.html">Articles</a>
@@ -344,6 +395,7 @@
     });
   });
 </script>
+<script src="theme.js"></script>
 
 </body>
 </html>

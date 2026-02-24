@@ -6,36 +6,78 @@
   <title>Articles | AI Future Trendz</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --link: #2563eb;
+      --card-bg: #f9fafb;
+      --header-bg: rgba(255, 255, 255, 0.92);
+      --header-border: rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark {
+      --bg: #121212;
+      --text: #e5e5e5;
+      --text-secondary: #aaaaaa;
+      --link: #60a5fa;
+      --card-bg: #1e1e1e;
+      --header-bg: rgba(18, 18, 18, 0.92);
+      --header-border: rgba(255, 255, 255, 0.12);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background: #0b0f17; color: #e6edf3; line-height: 1.6; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
     header {
       position: sticky;
       top: 0;
       width: 100%;
-      background: rgba(11, 15, 23, 0.9);
+      background: var(--header-bg);
       backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(255,255,255,0.1);
+      border-bottom: 1px solid var(--header-border);
       z-index: 1000;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
     .container { max-width: 1200px; margin: auto; padding: 0 20px; }
     nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
-    .logo { font-weight: 700; font-size: 20px; color: #58a6ff; text-decoration: none; }
+    .logo { font-weight: 700; font-size: 20px; color: var(--link); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; }
     .nav-links a {
       margin-left: 24px;
       text-decoration: none;
-      color: #e6edf3;
+      color: var(--text);
       font-weight: 500;
       transition: color 0.3s;
     }
-    .nav-links a:hover, .nav-links .active { color: #58a6ff; }
+    .nav-links a:hover, .nav-links .active { color: var(--link); }
+
+    .theme-toggle {
+      margin-left: 16px;
+      border: 1px solid var(--header-border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      width: 38px;
+      height: 38px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .theme-toggle:hover { background: var(--card-bg); }
 
     .hero {
       padding: 88px 0 48px;
       text-align: center;
-      background: radial-gradient(circle at top, rgba(88,166,255,0.16), transparent 40%);
+      background: radial-gradient(circle at top, rgba(37,99,235,0.16), transparent 40%);
     }
     .hero h1 { font-size: 40px; margin-bottom: 12px; }
-    .hero p { color: #9da7b3; max-width: 760px; margin: 0 auto; }
+    .hero p { color: var(--text-secondary); max-width: 760px; margin: 0 auto; }
 
     .articles-grid {
       display: grid;
@@ -45,8 +87,8 @@
     }
 
     .article-card {
-      background: #161b22;
-      border: 1px solid rgba(255,255,255,0.08);
+      background: var(--card-bg);
+      border: 1px solid var(--header-border);
       border-radius: 14px;
       overflow: hidden;
       text-decoration: none;
@@ -57,8 +99,8 @@
 
     .article-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(88,166,255,0.6);
-      box-shadow: 0 16px 35px rgba(0,0,0,0.45);
+      border-color: var(--link);
+      box-shadow: 0 16px 35px rgba(0,0,0,0.2);
     }
 
     .article-card img {
@@ -70,14 +112,14 @@
 
     .article-content { padding: 22px; }
     .article-content h2 { font-size: 24px; margin-bottom: 10px; line-height: 1.3; }
-    .article-content p { color: #9da7b3; margin-bottom: 12px; }
-    .read-more { color: #58a6ff; font-weight: 600; }
+    .article-content p { color: var(--text-secondary); margin-bottom: 12px; }
+    .read-more { color: var(--link); font-weight: 600; }
 
     footer {
-      border-top: 1px solid rgba(255,255,255,0.1);
+      border-top: 1px solid var(--header-border);
       padding: 20px;
       text-align: center;
-      color: #9da7b3;
+      color: var(--text-secondary);
     }
 
     @media (max-width: 768px) {
@@ -89,11 +131,13 @@
       nav { flex-direction: column; gap: 10px; }
       .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
       .nav-links a { margin: 0 10px; }
+      .theme-toggle { margin-left: 0; }
       .articles-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
+  <script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');</script>
   <header>
     <div class="container">
       <nav>
@@ -105,6 +149,7 @@
           <a href="#">About</a>
           <a href="#">Contact</a>
         </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
       </nav>
     </div>
   </header>
@@ -141,5 +186,6 @@
   <footer>
     © 2026 AI Future Trendz. All rights reserved.
   </footer>
+  <script src="theme.js"></script>
 </body>
 </html>
