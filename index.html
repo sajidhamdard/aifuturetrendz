@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+<meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
@@ -52,12 +52,113 @@
   }
   </script>
 
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/index.css" />
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #ffffff;
+      --bg-section: #fafafa;
+      --border: #e2e8f0;
+      --gradient: linear-gradient(90deg, #2563eb, #9333ea);
+    }
+
+    /* Dark Mode Variables */
+    body.dark {
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --bg-light: #0f172a;
+      --bg-section: #1e293b;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', sans-serif; color: var(--text-main); line-height: 1.6; background: var(--bg-light); overflow-x: hidden; transition: background 0.3s ease; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation */
+    header { border-bottom: 1px solid var(--border); padding: 1rem 0; background: var(--bg-light); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.5rem; color: var(--text-main); text-decoration: none; }
+    .logo span { color: var(--primary); }
+    
+    .nav-controls { display: flex; align-items: center; gap: 1rem; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: 0.2s; }
+    .nav-links a:hover { color: var(--primary); }
+
+    /* Theme & Mobile Toggle */
+    .theme-toggle, .nav-toggle { background: none; border: 1px solid var(--border); padding: 8px; border-radius: 8px; cursor: pointer; font-size: 1.2rem; color: var(--text-main); display: flex; align-items: center; justify-content: center; }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; padding: 10px; }
+    .nav-toggle span { width: 20px; height: 2px; background: var(--text-main); transition: 0.3s; }
+
+    /* Buttons */
+    .btn { display: inline-block; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-decoration: none; transition: 0.3s; cursor: pointer; border: none; font-size: 0.95rem; }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-outline { border: 1px solid var(--border); color: var(--text-main); }
+
+    /* Hero Section */
+    .hero { padding: 80px 0; text-align: center; background: radial-gradient(circle at 90% 10%, rgba(37,99,235,0.05) 0%, transparent 40%); }
+    .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+    .gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-description { max-width: 680px; margin: 0 auto 2.5rem; color: var(--text-muted); font-size: 1.15rem; }
+    
+    .hero-features { display: flex; justify-content: center; gap: 3rem; margin-bottom: 3rem; }
+    .feature-item { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; }
+    .icon-box { width: 50px; height: 50px; background: var(--bg-section); border: 1px solid var(--border); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+
+    /* REDESIGNED CARDS: Intelligence Report Style */
+    .articles-preview { padding: 80px 0; background: var(--bg-section); }
+    .section-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+    
+    .article-card { 
+      padding: 32px; 
+      border: 1px solid var(--border); 
+      border-left: 4px solid var(--primary); /* Blue accent bar */
+      border-radius: 12px; 
+      transition: all 0.3s ease; 
+      background: var(--bg-light); 
+      display: flex; 
+      flex-direction: column;
+    }
+    .article-card:hover { 
+      transform: translateX(8px); 
+      border-left-color: #9333ea; 
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); 
+    }
+
+    .badge { align-self: flex-start; padding: 4px 12px; background: rgba(37,99,235,0.1); color: var(--primary); font-size: 0.75rem; font-weight: 700; border-radius: 6px; margin-bottom: 1rem; }
+    .article-card h3 { margin-bottom: 1rem; font-size: 1.35rem; font-weight: 700; }
+    .article-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 2rem; flex-grow: 1; }
+    
+    .card-footer { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    .read-more { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.9rem; }
+    .date { font-size: 0.85rem; color: var(--text-muted); }
+
+    /* NEWSLETTER */
+    .newsletter-section { padding: 100px 0; }
+    .newsletter-box { background: var(--bg-light); border: 1px solid var(--border); padding: 60px 40px; border-radius: 32px; text-align: center; border-bottom: 4px solid var(--primary); }
+    .newsletter-form { display: flex; gap: 12px; max-width: 500px; margin: 2rem auto 0; }
+    .newsletter-form input { flex: 1; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-light); color: var(--text-main); }
+
+    footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: var(--bg-light); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border); }
+      .nav-links.active { display: flex; }
+      .newsletter-form { flex-direction: column; }
+    }
+  </style>
+  <script src="scripts/seo.js"></script>
 </head>
 
 <body>
 <script>
+  // Restore Dark Mode check
   if (localStorage.getItem('theme') === 'dark') {
     document.body.classList.add('dark');
   }
@@ -66,115 +167,104 @@
 <header>
   <div class="container">
     <nav>
-      <a class="logo" href="index.html" aria-label="AI Future Trendz home">
-        <img loading="lazy" decoding="async" width="118" height="32" src="assets/aft-logo.svg" alt="AI Future Trendz logo" />
-      </a>
+      <a class="logo" href="index.html">A<span>F</span>T</a>
 
       <div class="nav-controls">
         <div class="nav-links" id="navLinks">
           <a href="index.html">Home</a>
           <a href="articles.html">Articles</a>
-          <a href="#">Trends</a>
           <a href="about.html">About</a>
           <a href="contact.html">Contact</a>
+          <button class="btn btn-primary" style="padding: 8px 16px; font-size: 0.85rem;">Subscribe</button>
         </div>
 
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+        
         <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
           <span></span><span></span><span></span>
         </button>
-
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
       </div>
     </nav>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-content">
-      <h1>Artificial Intelligence Trends, Tools & Technology Explained</h1>
-      <p>
-        AI Future Trendz is a practical AI blog covering the latest artificial intelligence trends, generative models, AI tools, product launches, and enterprise technology shifts — built for IT professionals and tech leaders, yet accessible to everyone.
-      </p>
-      <a href="articles.html" class="btn">Browse Latest AI Insights</a>
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Understanding AI <br><span class="gradient-text">Beyond the Headlines</span></h1>
+      <p class="hero-description">Practical intelligence for the modern tech leader. We bridge the gap between AI hype and enterprise reality.</p>
+
+      <div class="hero-features">
+        <div class="feature-item"><div class="icon-box">📈</div><span>Trends</span></div>
+        <div class="feature-item"><div class="icon-box">🛠️</div><span>Tools</span></div>
+        <div class="feature-item"><div class="icon-box">🧠</div><span>Insights</span></div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="articles.html" class="btn btn-primary">Browse Insights</a>
+        <a href="#newsletter" class="btn btn-outline">Weekly Brief</a>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- LATEST ARTICLES -->
-<section>
-  <div class="container">
-    <h2 class="section-title">Latest AI Articles</h2>
-    <div class="grid">
+  <section class="articles-preview">
+    <div class="container">
+      <div class="section-header">
+        <h2>Latest Deep Dives</h2>
+        <a href="articles.html" style="color: var(--primary); font-weight: 700; text-decoration: none; font-size: 0.9rem;">View all articles →</a>
+      </div>
+      
+      <div class="grid">
+        <article class="article-card">
+          <span class="badge">Explainer</span>
+          <h3>AI Agents Explained for Developers</h3>
+          <p>How autonomous agents are transforming orchestration systems and enterprise automation in 2026.</p>
+          <div class="card-footer">
+            <a class="read-more" href="#">Read Article →</a>
+            <span class="date">May 02, 2026</span>
+          </div>
+        </article>
 
-      <article class="article-card">
-        <span class="badge">Explainer</span>
-        <h3>AI Agents Explained for Developers</h3>
-        <p>How autonomous AI agents are transforming developer workflows, orchestration systems, and enterprise automation in 2026.</p>
-        <div class="card-footer">
-          <a class="read-more" href="articles.html">Read Article →</a>
-          <span>May 02, 2026</span>
-        </div>
-      </article>
+        <article class="article-card">
+          <span class="badge">Workforce</span>
+          <h3>The Future of AI Jobs</h3>
+          <p>Exploring roles being automated and the new AI-first careers where human expertise remains critical.</p>
+          <div class="card-footer">
+            <a class="read-more" href="#">Read Article →</a>
+            <span class="date">Apr 26, 2026</span>
+          </div>
+        </article>
 
-      <article class="article-card">
-        <span class="badge">Workforce</span>
-        <h3>The Future of AI Jobs</h3>
-        <p>Which roles are being automated, what new AI-first careers are emerging, and where high-value human expertise remains critical.</p>
-        <div class="card-footer">
-          <a class="read-more" href="articles.html">Read Article →</a>
-          <span>Apr 26, 2026</span>
-        </div>
-      </article>
-
-      <article class="article-card">
-        <span class="badge">Tools</span>
-        <h3>Top AI Tools for IT Teams in 2026</h3>
-        <p>A curated roundup of practical AI tools for coding, DevOps, analytics, documentation, and enterprise productivity.</p>
-        <div class="card-footer">
-          <a class="read-more" href="articles.html">Read Article →</a>
-          <span>Apr 18, 2026</span>
-        </div>
-      </article>
-
+        <article class="article-card">
+          <span class="badge">Tools</span>
+          <h3>Top AI Tools for IT Teams</h3>
+          <p>A curated roundup of practical tools for coding, DevOps, and enterprise productivity.</p>
+          <div class="card-footer">
+            <a class="read-more" href="#">Read Article →</a>
+            <span class="date">Apr 18, 2026</span>
+          </div>
+        </article>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- NEWSLETTER -->
-<section>
-  <div class="container">
-    <div class="newsletter">
-      <h2>Stay Ahead in AI</h2>
-      <p>Join IT professionals receiving one high-signal AI breakdown every week — trends, tools, and strategic insights.</p>
-      <input type="email" placeholder="Enter your email address" aria-label="Email address">
-      <a href="#" class="btn">Subscribe Now</a>
+  <section id="newsletter" class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-box">
+        <h2>Stay Ahead in AI</h2>
+        <p>Join 5,000+ IT professionals receiving one high-signal AI breakdown every week.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe Now</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</main>
 
 <footer>
-  © 2026 AI Future Trendz. All rights reserved.
+  <p>© 2026 AI Future Trendz. Cutting through the noise with practical AI intelligence.</p>
 </footer>
-
-<script>
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-
-  navToggle.addEventListener('click', () => {
-    navToggle.classList.toggle('active');
-    navLinks.classList.toggle('active');
-  });
-
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navToggle.classList.remove('active');
-      navLinks.classList.remove('active');
-    });
-  });
-</script>
-
 <script src="scripts/theme.js" defer></script>
 </body>
 </html>
