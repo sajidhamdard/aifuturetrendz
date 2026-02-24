@@ -93,23 +93,48 @@
     }
     .theme-toggle:hover { transform: translateY(-2px); background: var(--card-bg); }
 
-    .article-wrapper {
-      max-width: 760px;
+    .article-container {
+      max-width: 900px;
       margin: 0 auto;
-      padding: 40px 0 24px;
+      padding: 48px 20px;
     }
 
-    .hero-image {
+    .article-hero-image {
       width: 100%;
-      border-radius: 16px;
-      margin-bottom: 28px;
-      max-height: 420px;
+      height: 420px;
       object-fit: cover;
+      border-radius: 16px;
+      margin-bottom: 48px;
+      display: block;
       border: 1px solid var(--border);
     }
 
-    h1 { margin-bottom: 16px; }
-    .meta { color: var(--muted); margin-bottom: 28px; font-size: 14px; }
+    .article-title {
+      font-size: 40px;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 24px;
+      color: #111827;
+    }
+
+    body.dark .article-title {
+      color: #f3f4f6;
+    }
+
+    .article-subtitle {
+      font-size: 18px;
+      color: #6b7280;
+      margin-bottom: 40px;
+      max-width: 750px;
+    }
+
+    body.dark .article-subtitle {
+      color: #9ca3af;
+    }
+
+    .meta { color: var(--muted); margin-bottom: 0; font-size: 14px; }
+    article p:first-child { margin-top: 40px; }
     article p { margin-bottom: 20px; }
 
     footer {
@@ -122,7 +147,13 @@
     }
 
     @media (max-width: 768px) {
-      h1 { font-size: 36px; }
+      .article-hero-image {
+        height: auto;
+      }
+
+      .article-title {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -141,9 +172,9 @@
   </header>
 
   <main class="container">
-    <div class="article-wrapper">
-      <img class="hero-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1500" alt="Futuristic digital skyline" />
-      <h1>What stops large IT service companies like TCS, Infosys, Wipro, etc., from building frontier-level LLMs like ChatGPT or Gemini?</h1>
+    <div class="article-container">
+      <img class="article-hero-image" src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1500" alt="Futuristic digital skyline" />
+      <h1 class="article-title">What stops large IT service companies like TCS, Infosys, Wipro, etc., from building frontier-level LLMs like ChatGPT or Gemini?</h1>
       <p class="meta">Published on AI Future Trendz · 8 min read</p>
       <article>
         <p>At first glance, it seems logical that giant IT services firms should be able to build world-class language models. They have talent, deep enterprise relationships, and global delivery networks. But frontier-level LLMs are not just an extension of software services—they are a fundamentally different game.</p>
