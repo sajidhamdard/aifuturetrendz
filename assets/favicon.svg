@@ -1,0 +1,6 @@
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AFT favicon</title>
+  <desc id="desc">Rounded blue square with white AFT letters.</desc>
+  <rect x="4" y="4" width="120" height="120" rx="24" fill="#3F63D6"/>
+  <text x="64" y="77" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#F8FAFC" letter-spacing="1">AFT</text>
+</svg>

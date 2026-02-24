@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Future Trendz</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -74,11 +76,21 @@
     }
 
     .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       font-weight: 700;
       font-size: 18px;
       color: var(--text);
       letter-spacing: 0.5px;
       text-decoration: none;
+    }
+
+    .logo img {
+      width: 118px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
     }
 
     .nav-controls {
@@ -340,7 +352,9 @@
 <header>
   <div class="container">
     <nav>
-      <a class="logo" href="index.html">AI FUTURE TRENDZ</a>
+      <a class="logo" href="index.html" aria-label="AI Future Trendz home">
+        <img src="assets/aft-logo.svg" alt="AI Future Trendz logo" />
+      </a>
       <div class="nav-controls">
         <div class="nav-links" id="navLinks">
           <a href="#">Home</a>
