@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About AIFutureTrendz | AI Blog Mission and Vision</title>
+  <meta name="description" content="Learn about AIFutureTrendz, a technology blog focused on practical, easy-to-understand Artificial Intelligence insights, trends, and tools." />
+  <meta name="keywords" content="About AIFutureTrendz, Artificial Intelligence blog, AI trends, LLMs, ChatGPT, Gemini, AI tools" />
+  <meta name="author" content="AIFutureTrendz" />
+  <link rel="canonical" href="https://aifuturetrendz.com/about.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="About AIFutureTrendz" />
+  <meta property="og:description" content="A technology blog explaining Artificial Intelligence in simple and practical language." />
+  <meta property="og:url" content="https://aifuturetrendz.com/about.html" />
+  <meta property="og:site_name" content="AIFutureTrendz" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About AIFutureTrendz" />
+  <meta name="twitter:description" content="A technology blog explaining Artificial Intelligence in simple and practical language." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Organization",
+ "name": "AIFutureTrendz",
+ "url": "https://aifuturetrendz.com",
+ "description": "A technology blog explaining Artificial Intelligence in simple and practical language."
+}
+  </script>
+  <style>
+    :root {
+      --header-height: 64px;
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      letter-spacing: 0.2px;
+      padding-top: var(--header-height);
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .container { max-width: 1200px; margin: auto; padding: 0 24px; }
+
+    h1 { font-size: 48px; font-weight: 700; line-height: 1.15; }
+    h2 { font-size: 30px; font-weight: 600; line-height: 1.25; }
+    p, li { font-size: 17px; }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      background: color-mix(in oklab, var(--bg) 92%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
+    }
+
+    nav { display: flex; align-items: center; min-height: var(--header-height); gap: 32px; }
+    .logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo img { width: 118px; height: auto; display: block; flex-shrink: 0; }
+    .nav-controls { margin-left: auto; display: flex; align-items: center; gap: 20px; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1.5px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 17px;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover { transform: translateY(-2px); background: var(--card-bg); }
+
+    .hero {
+      padding: 72px 0 40px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .hero .container { max-width: 900px; }
+
+    main { padding: 48px 0 80px; }
+
+    .about-content {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 36px;
+      display: grid;
+      gap: 28px;
+    }
+
+    .about-content section { display: grid; gap: 12px; }
+
+    .about-content p,
+    .about-content li { color: var(--muted); }
+
+    .about-content ul {
+      padding-left: 24px;
+      display: grid;
+      gap: 8px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 26px; }
+      .nav-links { gap: 14px; }
+      .about-content { padding: 24px; }
+    }
+
+    @media (max-width: 640px) {
+      .nav-controls { gap: 14px; }
+      .nav-links { gap: 12px; }
+      .nav-links a { font-size: 14px; }
+      .about-content { padding: 20px; }
+    }
+  </style>
+  <script src="seo.js"></script>
+</head>
+<body>
+  <script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');</script>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="index.html" aria-label="AI Future Trendz home"><img loading="lazy" decoding="async" width="118" height="32" src="assets/aft-logo.svg" alt="AI Future Trendz logo" /></a>
+        <div class="nav-controls">
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="#">Trends</a>
+            <a class="active" href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>About AIFutureTrendz</h1>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="about-content">
+      <section>
+        <h2>Our Mission</h2>
+        <p>
+          AIFutureTrendz is a technology blog focused on explaining Artificial Intelligence in clear and practical language.
+          Our goal is to make AI understandable for developers, students, professionals, and anyone curious about the future of technology.
+        </p>
+      </section>
+
+      <section>
+        <h2>Why This Blog Exists</h2>
+        <p>
+          Artificial Intelligence is evolving rapidly. However, much of the information online is either too technical or overly hyped.
+          This blog focuses on balanced, easy-to-understand explanations that help readers build real understanding.
+        </p>
+      </section>
+
+      <section>
+        <h2>What We Cover</h2>
+        <ul>
+          <li>Large Language Models (LLMs)</li>
+          <li>ChatGPT, Gemini, and AI tools</li>
+          <li>AI industry trends</li>
+          <li>How AI works (explained simply)</li>
+          <li>Impact of AI on software development and business</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>About the Author</h2>
+        <p>
+          This blog is written and curated by a technology professional with real-world software development experience.
+          The goal is to bridge the gap between complex AI research and practical understanding.
+        </p>
+      </section>
+
+      <section>
+        <h2>Our Vision</h2>
+        <p>
+          We believe understanding AI should not require a PhD — just curiosity and clear explanations.
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    (C) 2026 AI Future Trendz. All rights reserved.
+  </footer>
+
+  <script src="theme.js" defer></script>
+</body>
+</html>
