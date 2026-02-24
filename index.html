@@ -14,8 +14,10 @@
       --card-bg: #f9fafb;
       --header-bg: rgba(255, 255, 255, 0.92);
       --header-border: rgba(0, 0, 0, 0.1);
-      --hero-overlay-start: rgba(255, 255, 255, 0.45);
-      --hero-overlay-end: rgba(255, 255, 255, 0.6);
+      --hero-overlay-start: rgba(255, 255, 255, 0.75);
+      --hero-overlay-end: rgba(255, 255, 255, 0.75);
+      --hero-title: #111827;
+      --hero-subtitle: #1f2937;
     }
 
     body.dark {
@@ -26,8 +28,10 @@
       --card-bg: #1e1e1e;
       --header-bg: rgba(18, 18, 18, 0.92);
       --header-border: rgba(255, 255, 255, 0.12);
-      --hero-overlay-start: rgba(0, 0, 0, 0.62);
-      --hero-overlay-end: rgba(0, 0, 0, 0.72);
+      --hero-overlay-start: rgba(0, 0, 0, 0.65);
+      --hero-overlay-end: rgba(0, 0, 0, 0.65);
+      --hero-title: #f9fafb;
+      --hero-subtitle: #e5e7eb;
     }
 
     * {
@@ -179,6 +183,7 @@
       display: flex;
       align-items: center;
       text-align: center;
+      transition: background 0.35s ease;
     }
 
     .hero-content {
@@ -189,12 +194,17 @@
     .hero h1 {
       font-size: 48px;
       margin-bottom: 16px;
+      color: var(--hero-title);
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+      transition: color 0.35s ease, text-shadow 0.35s ease;
     }
 
     .hero p {
       font-size: 20px;
-      color: var(--text-secondary);
+      color: var(--hero-subtitle);
       margin-bottom: 24px;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.18);
+      transition: color 0.35s ease, text-shadow 0.35s ease;
     }
 
     .btn {
@@ -205,12 +215,14 @@
       text-decoration: none;
       border-radius: 6px;
       font-weight: 600;
-      transition: transform 0.2s, background 0.3s;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
     }
 
     .btn:hover {
       transform: translateY(-2px);
       background: #2ea043;
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.32);
     }
 
     section {
