@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+     <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About AIFutureTrendz | AI Blog Mission and Vision</title>
   <meta name="description" content="Learn about AIFutureTrendz, a technology blog focused on practical, easy-to-understand Artificial Intelligence insights, trends, and tools." />
@@ -30,9 +30,110 @@
  "description": "A technology blog explaining Artificial Intelligence in simple and practical language."
 }
   </script>
-  <link rel="stylesheet" href="css/styles.css" />
-  <link rel="stylesheet" href="css/about.css" />
-  <script src="scripts/seo.js"></script>
+    <script src="scripts/seo.js"></script>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --bg-light: #ffffff;
+      --bg-section: #fafafa;
+      --border: #e2e8f0;
+      --gradient: linear-gradient(90deg, #2563eb, #9333ea);
+    }
+
+    body.dark {
+      --text-main: #f1f5f9;
+      --text-muted: #94a3b8;
+      --bg-light: #0f172a;
+      --bg-section: #1e293b;
+      --border: #334155;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      color: var(--text-main); 
+      line-height: 1.7; 
+      background: var(--bg-light); 
+      transition: background 0.3s ease; 
+    }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+    /* Navigation - Glassmorphism */
+    header { 
+      border-bottom: 1px solid var(--border); 
+      padding: 1rem 0; 
+      background: var(--bg-light); 
+      backdrop-filter: blur(10px);
+      position: sticky; 
+      top: 0; 
+      z-index: 1000; 
+    }
+    nav { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-weight: 800; font-size: 1.5rem; color: var(--text-main); text-decoration: none; }
+    .logo span { color: var(--primary); }
+    
+    .nav-controls { display: flex; align-items: center; gap: 1rem; }
+    .nav-links { display: flex; gap: 1.5rem; align-items: center; }
+    .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: 0.2s; }
+    .nav-links a.active { color: var(--primary); }
+
+    .theme-toggle, .nav-toggle { 
+      background: none; border: 1px solid var(--border); 
+      padding: 8px; border-radius: 8px; cursor: pointer; color: var(--text-main); 
+    }
+    .nav-toggle { display: none; flex-direction: column; gap: 4px; }
+    .nav-toggle span { width: 20px; height: 2px; background: var(--text-main); }
+
+    /* Hero Section */
+    .hero { padding: 80px 0; text-align: center; background: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.05) 0%, transparent 40%); }
+    .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.04em; font-weight: 800; }
+    .hero p { max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem; }
+
+    /* About Content Layout */
+    .about-wrap { max-width: 800px; margin: 60px auto; }
+    
+    .about-section { 
+      background: var(--bg-light); 
+      padding: 40px; 
+      border-radius: 16px; 
+      border: 1px solid var(--border); 
+      border-left: 4px solid var(--primary); /* Intelligence bar accent */
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+    .about-section:hover { transform: translateX(8px); }
+    
+    .about-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main); }
+    .about-section p { margin-bottom: 15px; font-size: 1.05rem; opacity: 0.9; }
+    
+    .coverage-list { list-style: none; padding-top: 10px; }
+    .coverage-list li { 
+      padding: 12px 0; 
+      border-bottom: 1px solid var(--border); 
+      display: flex; 
+      align-items: center; 
+      gap: 12px; 
+      font-weight: 500;
+    }
+    .coverage-list li::before { content: "→"; color: var(--primary); font-weight: 800; }
+    .coverage-list li:last-child { border-bottom: none; }
+
+    footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.5rem; }
+      .nav-toggle { display: flex; }
+      .nav-links { display: none; }
+      .nav-links.active { 
+        display: flex; position: absolute; top: 100%; left: 0; width: 100%; 
+        background: var(--bg-light); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border);
+      }
+    }
+  </style>
 </head>
 <body>
   <script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');</script>
@@ -40,100 +141,75 @@
   <header>
     <div class="container">
       <nav>
-        <a class="logo" href="index.html" aria-label="AI Future Trendz home"><img loading="lazy" decoding="async" width="118" height="32" src="assets/aft-logo.svg" alt="AI Future Trendz logo" /></a>
+        <a class="logo" href="index.html">A<span>F</span>T</a>
         <div class="nav-controls">
           <div class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="articles.html">Articles</a>
-            <a href="#">Trends</a>
             <a class="active" href="about.html">About</a>
             <a href="contact.html">Contact</a>
           </div>
-          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
+          <button class="theme-toggle" id="themeToggle">🌙</button>
+          <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
         </div>
       </nav>
     </div>
   </header>
 
-  <section class="hero">
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Our <span style="color:var(--primary)">Mission</span></h1>
+        <p>Bridging the gap between complex AI research and practical understanding for everyone.</p>
+      </div>
+    </section>
+
     <div class="container">
-      <h1>About AIFutureTrendz</h1>
-    </div>
-  </section>
+      <div class="about-wrap">
+        
+        <section class="about-section">
+          <h2>Clear & Practical Insights</h2>
+          <p>
+            AIFutureTrendz is a technology blog dedicated to explaining Artificial Intelligence without the unnecessary hype. 
+            We believe that understanding the future of technology shouldn't require a PhD—just curiosity and clear, honest explanations.
+          </p>
+        </section>
 
-  <main class="container">
-    <div class="about-content">
-      <section>
-        <h2>Our Mission</h2>
-        <p>
-          AIFutureTrendz is a technology blog focused on explaining Artificial Intelligence in clear and practical language.
-          Our goal is to make AI understandable for developers, students, professionals, and anyone curious about the future of technology.
-        </p>
-      </section>
+        <section class="about-section">
+          <h2>Why This Blog Exists</h2>
+          <p>
+            In an era where AI news is often either overly academic or sensationalized, we focus on balanced, grounded insights. 
+            Our mission is to help developers, professionals, and students build a real, usable understanding of the systems shaping our world.
+          </p>
+        </section>
 
-      <section>
-        <h2>Why This Blog Exists</h2>
-        <p>
-          Artificial Intelligence is evolving rapidly. However, much of the information online is either too technical or overly hyped.
-          This blog focuses on balanced, easy-to-understand explanations that help readers build real understanding.
-        </p>
-      </section>
+        <section class="about-section">
+          <h2>What We Cover</h2>
+          <ul class="coverage-list">
+            <li>Large Language Models (LLMs) & Deep Research</li>
+            <li>Strategic analysis of ChatGPT, Gemini, and emerging tools</li>
+            <li>Practical AI industry trends and market shifts</li>
+            <li>Simplified technical deep-dives into how AI works</li>
+            <li>The real-world impact of AI on business and software</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>What We Cover</h2>
-        <ul>
-          <li>Large Language Models (LLMs)</li>
-          <li>ChatGPT, Gemini, and AI tools</li>
-          <li>AI industry trends</li>
-          <li>How AI works (explained simply)</li>
-          <li>Impact of AI on software development and business</li>
-        </ul>
-      </section>
+        <section class="about-section">
+          <h2>About the Author</h2>
+          <p>
+            This blog is curated by a technology professional with years of software development experience. 
+            By combining a technical background with a passion for clear communication, AIFutureTrendz serves as a high-signal resource in a noisy digital landscape.
+          </p>
+        </section>
 
-      <section>
-        <h2>About the Author</h2>
-        <p>
-          This blog is written and curated by a technology professional with real-world software development experience.
-          The goal is to bridge the gap between complex AI research and practical understanding.
-        </p>
-      </section>
-
-      <section>
-        <h2>Our Vision</h2>
-        <p>
-          We believe understanding AI should not require a PhD — just curiosity and clear explanations.
-        </p>
-      </section>
+      </div>
     </div>
   </main>
 
   <footer>
-    (C) 2026 AI Future Trendz. All rights reserved.
+    <div class="container">(C) 2026 AI Future Trendz. All rights reserved.</div>
   </footer>
 
   <script src="scripts/theme.js" defer></script>
-  <script>
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('active');
-      navLinks.classList.toggle('active');
-    });
-
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navToggle.classList.remove('active');
-        navLinks.classList.remove('active');
-      });
-    });
-  </script>
-
-  <script src="theme.js" defer></script>
 </body>
 </html>
