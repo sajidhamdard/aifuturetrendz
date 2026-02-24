@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      --header-height: 72px;
       --bg: #ffffff;
       --text: #1a1a1a;
       --text-secondary: #555555;
@@ -31,17 +32,23 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
+      padding-top: var(--header-height);
       transition: background-color 0.3s ease, color 0.3s ease;
     }
     .container { max-width: 900px; margin: auto; padding: 0 20px; }
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
       border-bottom: 1px solid var(--header-border);
       background: var(--header-bg);
+      z-index: 1000;
       transition: background-color 0.3s ease, border-color 0.3s ease;
     }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 18px 0; }
+    nav { display: flex; justify-content: space-between; align-items: center; min-height: var(--header-height); }
     .logo { color: var(--link); text-decoration: none; font-weight: 700; }
-    .right-controls { display: flex; align-items: center; gap: 14px; }
+    .right-controls { display: flex; align-items: center; gap: 14px; margin-left: auto; }
     .back-link { color: var(--text-secondary); text-decoration: none; }
     .back-link:hover { color: var(--link); }
     .theme-toggle {
@@ -67,7 +74,7 @@
     @media (max-width: 600px) {
       h1 { font-size: 28px; }
       nav { flex-direction: column; align-items: flex-start; gap: 12px; }
-      .right-controls { width: 100%; justify-content: space-between; }
+      .right-controls { width: 100%; justify-content: space-between; margin-left: 0; }
     }
   </style>
 </head>
