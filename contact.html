@@ -223,6 +223,63 @@
       border-radius: 16px;
       box-shadow: var(--shadow);
       padding: 30px;
+  <meta name="description" content="Contact AIFutureTrendz for questions, collaboration ideas, and technical feedback." />
+  <link rel="canonical" href="https://aifuturetrendz.com/contact.html" />
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #111827;
+      --muted: #4b5563;
+      --primary: #2563eb;
+      --border: #e5e7eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 24px;
+    }
+
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    h1 {
+      font-size: clamp(1.8rem, 2.7vw, 2.4rem);
+      margin-bottom: 20px;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    section + section {
+      margin-top: 28px;
+      padding-top: 22px;
+      border-top: 1px solid var(--border);
+    }
+
+    p {
+      color: var(--muted);
+      margin-bottom: 12px;
     }
 
     .quick-links {
@@ -375,5 +432,93 @@
   </footer>
 
   <script src="theme.js" defer></script>
+      gap: 12px;
+      margin-bottom: 18px;
+    }
+
+    .quick-links a,
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover,
+    a:focus-visible {
+      text-decoration: underline;
+    }
+
+    ul {
+      padding-left: 22px;
+      color: var(--muted);
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 14px;
+      }
+
+      main {
+        padding: 22px;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+   "@context": "https://schema.org",
+   "@type": "Person",
+   "name": "Sajid Khan",
+   "url": "https://aifuturetrendz.com",
+   "sameAs": [
+     "https://www.linkedin.com/in/sajid-sj/"
+   ],
+   "email": "sajid.hmdrd@gmail.com"
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <h1>Contact Us</h1>
+
+    <nav class="quick-links" aria-label="Contact sections">
+      <a href="#contact-information">Contact Information</a>
+      <a href="#collaboration-suggestions">Collaboration &amp; Suggestions</a>
+    </nav>
+
+    <section>
+      <p>
+        If you have questions, feedback, collaboration ideas, or topic suggestions, feel free to reach out.
+      </p>
+    </section>
+
+    <section id="contact-information">
+      <h2>Contact Information</h2>
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:sajid.hmdrd@gmail.com">sajid.hmdrd@gmail.com</a>
+      </p>
+
+      <p>
+        <strong>LinkedIn:</strong>
+        <a href="https://www.linkedin.com/in/sajid-sj/" target="_blank" rel="noopener noreferrer">
+          Sajid Khan on LinkedIn
+        </a>
+      </p>
+    </section>
+
+    <section id="collaboration-suggestions">
+      <h2>Collaboration &amp; Suggestions</h2>
+      <p>
+        We welcome:
+      </p>
+      <ul>
+        <li>AI-related discussions</li>
+        <li>Content suggestions</li>
+        <li>Collaboration opportunities</li>
+        <li>Technical feedback</li>
+      </ul>
+    </section>
+  </main>
 </body>
 </html>
