@@ -1,0 +1,37 @@
+h1 { font-size: 40px; font-weight: 700; line-height: 1.2; }
+h2 { font-size: 30px; font-weight: 600; line-height: 1.25; margin: 44px 0 18px; }
+h3 { font-size: 22px; font-weight: 600; line-height: 1.35; margin: 24px 0 12px; }
+p { font-size: 17px; font-weight: 400; line-height: 1.7; margin-bottom: 18px; }
+
+.article-container { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
+.article-hero-image {
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 40px;
+  display: block;
+  border: 1px solid var(--border);
+}
+.meta { color: var(--muted); margin: 18px 0 26px; font-size: 15px; }
+.faq-item { border-top: 1px solid var(--border); padding-top: 16px; }
+.related-articles,
+.author-box {
+  margin-top: 30px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px;
+  background: var(--card-bg);
+}
+.related-articles ul { margin: 10px 0 0 18px; }
+.related-articles li { margin-bottom: 8px; }
+.related-articles a { color: var(--primary); text-decoration: none; font-weight: 500; }
+.related-articles a:hover { text-decoration: underline; }
+footer { margin-top: 40px; }
+
+@media (max-width: 768px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 25px; }
+  .article-container { padding: 36px 14px; }
+}
