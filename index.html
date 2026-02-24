@@ -4,35 +4,27 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Future Trendz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --header-height: 72px;
+      --header-height: 64px;
       --bg: #ffffff;
-      --text: #1a1a1a;
-      --text-secondary: #555555;
-      --link: #2563eb;
-      --card-bg: #f9fafb;
-      --header-bg: rgba(255, 255, 255, 0.92);
-      --header-border: rgba(0, 0, 0, 0.1);
-      --hero-title: #111827;
-      --hero-subtitle: #111827;
-      --hero-gradient: linear-gradient(135deg, #eef2ff, #f8fafc);
-      --hero-glow: radial-gradient(circle at center, rgba(99, 102, 241, 0.16), transparent 62%);
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     }
 
     body.dark {
-      --bg: #121212;
-      --text: #e5e5e5;
-      --text-secondary: #aaaaaa;
-      --link: #60a5fa;
-      --card-bg: #1e1e1e;
-      --header-bg: rgba(18, 18, 18, 0.92);
-      --header-border: rgba(255, 255, 255, 0.12);
-      --hero-title: #f3f4f6;
-      --hero-subtitle: #f3f4f6;
-      --hero-gradient: linear-gradient(135deg, #0f172a, #1e293b);
-      --hero-glow: radial-gradient(circle at center, rgba(59, 130, 246, 0.12), transparent 62%);
+      --bg: #0f172a;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
     }
 
     * {
@@ -40,294 +32,305 @@
       padding: 0;
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     body {
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
+      letter-spacing: 0.2px;
       padding-top: var(--header-height);
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    header {
-      position: fixed;
-      left: 0;
-      width: 100%;
-      top: 0;
-      background: var(--header-bg);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--header-border);
-      z-index: 1000;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
     }
 
     .container {
       max-width: 1200px;
       margin: auto;
-      padding: 0 20px;
+      padding: 0 24px;
+    }
+
+    h1 { font-size: 48px; font-weight: 700; line-height: 1.15; }
+    h2 { font-size: 32px; font-weight: 600; line-height: 1.2; }
+    h3 { font-size: 22px; font-weight: 500; line-height: 1.35; }
+    p { font-size: 17px; font-weight: 400; line-height: 1.7; }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      background: color-mix(in oklab, var(--bg) 92%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     nav {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       min-height: var(--header-height);
+      gap: 32px;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      text-decoration: none;
     }
 
     .nav-controls {
+      margin-left: auto;
       display: flex;
       align-items: center;
-      margin-left: auto;
-      gap: 16px;
+      gap: 20px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 20px;
-      color: var(--link);
+      gap: 24px;
     }
 
     .nav-links a {
-      margin-left: 24px;
+      position: relative;
       text-decoration: none;
       color: var(--text);
+      font-size: 15px;
       font-weight: 500;
-      transition: color 0.3s;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1.5px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
     }
 
     .nav-links a:hover {
-      color: var(--link);
+      color: var(--primary);
+    }
+
+    .nav-links a:hover::after {
+      transform: scaleX(1);
     }
 
     .theme-toggle {
-      border: 1px solid var(--header-border);
+      border: 1px solid var(--border);
       background: transparent;
       color: var(--text);
       border-radius: 999px;
-      width: 38px;
-      height: 38px;
+      width: 36px;
+      height: 36px;
       cursor: pointer;
-      font-size: 18px;
-      line-height: 1;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 17px;
+      transition: all 0.3s ease;
     }
 
     .theme-toggle:hover {
+      transform: translateY(-2px);
       background: var(--card-bg);
     }
 
     .nav-toggle {
       display: none;
       flex-direction: column;
-      background: none;
-      border: none;
+      border: 0;
+      background: transparent;
       cursor: pointer;
       padding: 8px;
     }
 
     .nav-toggle span {
-      width: 24px;
-      height: 3px;
+      width: 22px;
+      height: 2px;
       background: var(--text);
       margin: 4px 0;
-      border-radius: 3px;
-      transition: all 0.3s;
-      display: block;
+      border-radius: 2px;
+      transition: all 0.3s ease;
     }
 
-    .nav-toggle.active span:nth-child(1) {
-      transform: rotate(45deg) translate(10px, 10px);
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 7px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    .hero {
+      min-height: calc(100vh - var(--header-height));
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
     }
 
-    .nav-toggle.active span:nth-child(2) {
-      opacity: 0;
+    .hero-content {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      padding: 80px 0;
     }
 
-    .nav-toggle.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(8px, -8px);
+    .hero p {
+      margin: 16px auto 32px;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 680px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.02);
+    }
+
+    section { padding: 80px 0; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 32px;
+    }
+
+    .article-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .article-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .badge {
+      display: inline-block;
+      width: fit-content;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: color-mix(in oklab, var(--primary) 12%, transparent);
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+
+    .article-card p {
+      color: var(--muted);
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-size: 16px;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .read-more {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .newsletter {
+      max-width: 760px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--card-bg);
+      text-align: center;
+      padding: 40px;
+    }
+
+    .newsletter p { color: var(--muted); margin: 8px 0 24px; }
+
+    input[type="email"] {
+      width: min(100%, 340px);
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      margin-right: 8px;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="email"]:focus { outline: none; border-color: var(--primary); }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 1024px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
     @media (max-width: 768px) {
-      .nav-controls {
-        gap: 12px;
-      }
-
-      .nav-toggle {
-        display: flex;
-        order: 2;
-      }
-
+      h1 { font-size: 36px; }
+      .nav-toggle { display: flex; order: 2; }
       .nav-links {
         position: absolute;
         top: var(--header-height);
         left: 0;
         right: 0;
-        background: var(--header-bg);
-        flex-direction: column;
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.3s ease-out;
-        border-bottom: 1px solid var(--header-border);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        transition: max-height 0.3s ease;
       }
-
-      .nav-links.active {
-        max-height: 300px;
-      }
-
-      .nav-links a {
-        margin: 0;
-        padding: 12px 20px;
-        border-bottom: 1px solid var(--header-border);
-        display: block;
-      }
-
-      .theme-toggle {
-        order: 3;
-      }
+      .nav-links.active { max-height: 280px; }
+      .nav-links a { width: 100%; padding: 12px 24px; }
+      .theme-toggle { order: 3; }
     }
 
-    .hero {
-      height: 100vh;
-      position: relative;
-      background: var(--hero-gradient);
-      display: flex;
-      align-items: center;
-      text-align: center;
-      transition: background 0.35s ease;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--hero-glow);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      max-width: 800px;
-      margin: auto;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 16px;
-      color: var(--hero-title);
-      transition: color 0.35s ease;
-    }
-
-    .hero p {
-      font-size: 20px;
-      color: var(--hero-subtitle);
-      margin-bottom: 24px;
-      transition: color 0.35s ease;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 24px;
-      background: #238636;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: 600;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
-      transition: transform 0.2s, background 0.3s, box-shadow 0.3s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      background: #2ea043;
-      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.32);
-    }
-
-    section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 40px;
-      text-align: center;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .card {
-      background: var(--card-bg);
-      border-radius: 10px;
-      overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
-
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
-
-    .card-content {
-      padding: 20px;
-    }
-
-    .card-content h3 {
-      margin-bottom: 10px;
-      font-size: 20px;
-    }
-
-    .card-content p {
-      color: var(--text-secondary);
-      font-size: 14px;
-    }
-
-    .newsletter {
-      background: var(--card-bg);
-      text-align: center;
-      border-radius: 10px;
-      padding: 40px;
-    }
-
-    input[type="email"] {
-      padding: 12px;
-      width: 300px;
-      border: none;
-      border-radius: 6px;
-      margin-right: 10px;
-    }
-
-    footer {
-      border-top: 1px solid var(--header-border);
-      padding: 20px;
-      text-align: center;
-      color: var(--text-secondary);
-    }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      input[type="email"] {
-        width: 100%;
-        margin-bottom: 10px;
-      }
+    @media (max-width: 640px) {
+      .grid { grid-template-columns: 1fr; }
+      input[type="email"] { margin: 0 0 12px; }
     }
   </style>
 </head>
@@ -337,7 +340,7 @@
 <header>
   <div class="container">
     <nav>
-      <div class="logo">AI FUTURE TRENDZ</div>
+      <a class="logo" href="index.html">AI FUTURE TRENDZ</a>
       <div class="nav-controls">
         <div class="nav-links" id="navLinks">
           <a href="#">Home</a>
@@ -361,7 +364,7 @@
   <div class="container">
     <div class="hero-content">
       <h1>The Future of Artificial Intelligence</h1>
-      <p>Latest AI trends, tools, and insights shaping tomorrow's world.</p>
+      <p>Trusted reporting on AI breakthroughs, product shifts, and strategic trends shaping tomorrow.</p>
       <a href="articles.html" class="btn">Explore Articles</a>
     </div>
   </div>
@@ -371,31 +374,35 @@
   <div class="container">
     <h2 class="section-title">Latest Articles</h2>
     <div class="grid">
-
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1677756119517-756a188d2d94?q=80&w=800">
-        <div class="card-content">
-          <h3>AI Agents Explained</h3>
-          <p>Learn how AI agents are transforming automation and productivity.</p>
+      <article class="article-card">
+        <span class="badge">Explainer</span>
+        <h3>AI Agents Explained</h3>
+        <p>Understand how autonomous AI agents are reshaping workflows, task orchestration, and enterprise productivity.</p>
+        <div class="card-footer">
+          <a class="read-more" href="articles.html">Read more →</a>
+          <span>May 02, 2026</span>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1677442135136-760c813028c0?q=80&w=800">
-        <div class="card-content">
-          <h3>Future of AI Jobs</h3>
-          <p>Discover which jobs AI will replace and create in the future.</p>
+      <article class="article-card">
+        <span class="badge">Workforce</span>
+        <h3>Future of AI Jobs</h3>
+        <p>What roles are being automated, what new categories are emerging, and where high-value human work remains.</p>
+        <div class="card-footer">
+          <a class="read-more" href="articles.html">Read more →</a>
+          <span>Apr 26, 2026</span>
         </div>
-      </div>
+      </article>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800">
-        <div class="card-content">
-          <h3>Top AI Tools in 2026</h3>
-          <p>Explore the best AI tools everyone should know this year.</p>
+      <article class="article-card">
+        <span class="badge">Tools</span>
+        <h3>Top AI Tools in 2026</h3>
+        <p>A curated roundup of practical AI products helping teams with coding, writing, analytics, and operations.</p>
+        <div class="card-footer">
+          <a class="read-more" href="articles.html">Read more →</a>
+          <span>Apr 18, 2026</span>
         </div>
-      </div>
-
+      </article>
     </div>
   </div>
 </section>
@@ -404,8 +411,7 @@
   <div class="container">
     <div class="newsletter">
       <h2>Subscribe to AI Newsletter</h2>
-      <p>Get weekly AI insights directly in your inbox.</p>
-      <br>
+      <p>Get one concise, high-signal AI brief every week.</p>
       <input type="email" placeholder="Enter your email">
       <a href="#" class="btn">Subscribe</a>
     </div>
@@ -425,7 +431,6 @@
     navLinks.classList.toggle('active');
   });
 
-  // Close menu when a link is clicked
   navLinks.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
