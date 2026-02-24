@@ -261,7 +261,8 @@
   setMeta("name", "twitter:description", description);
   setMeta("name", "twitter:image", imageUrl);
 
-  getOrCreateLink("icon").setAttribute("href", "/favicon.png");
+  getOrCreateLink("icon").setAttribute("type", "image/svg+xml");
+  getOrCreateLink("icon").setAttribute("href", "/assets/favicon.svg");
   getOrCreateLink("apple-touch-icon").setAttribute("href", "/apple-touch-icon.png");
 
   if (isArticle) {
