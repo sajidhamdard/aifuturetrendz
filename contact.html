@@ -4,6 +4,225 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact Us | AIFutureTrendz</title>
+  <meta name="description" content="Reach out to AIFutureTrendz for questions, feedback, collaboration ideas, and topic suggestions." />
+  <meta name="keywords" content="Contact AIFutureTrendz, AI collaboration, AI feedback, AI content suggestions" />
+  <meta name="author" content="AIFutureTrendz" />
+  <link rel="canonical" href="https://aifuturetrendz.com/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Contact Us | AIFutureTrendz" />
+  <meta property="og:description" content="Get in touch with AIFutureTrendz for collaboration, feedback, and AI-related discussions." />
+  <meta property="og:url" content="https://aifuturetrendz.com/contact.html" />
+  <meta property="og:site_name" content="AIFutureTrendz" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Contact Us | AIFutureTrendz" />
+  <meta name="twitter:description" content="Get in touch with AIFutureTrendz for collaboration, feedback, and AI-related discussions." />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "Person",
+ "name": "Sajid Khan",
+ "url": "https://aifuturetrendz.com",
+ "sameAs": [
+   "https://www.linkedin.com/in/sajid-sj/"
+ ],
+ "email": "sajid.hmdrd@gmail.com"
+}
+  </script>
+  <style>
+    :root {
+      --header-height: 64px;
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --primary: #2563eb;
+      --card-bg: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+
+    body.dark {
+      --bg: #0f172a;
+      --text: #f3f4f6;
+      --muted: #9ca3af;
+      --primary: #60a5fa;
+      --card-bg: #1e293b;
+      --border: #334155;
+      --shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      letter-spacing: 0.2px;
+      padding-top: var(--header-height);
+      transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 24px;
+    }
+
+    h1 { font-size: 44px; font-weight: 700; line-height: 1.15; }
+    h2 { font-size: 30px; font-weight: 600; line-height: 1.2; }
+    p { font-size: 17px; font-weight: 400; line-height: 1.7; }
+
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      background: color-mix(in oklab, var(--bg) 92%, transparent);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      min-height: var(--header-height);
+      gap: 32px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--text);
+      letter-spacing: 0.5px;
+      text-decoration: none;
+    }
+
+    .logo img {
+      width: 118px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .nav-controls {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav-links a {
+      position: relative;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 4px 0;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 1.5px;
+      background: var(--primary);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--primary); }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { transform: scaleX(1); }
+
+    .theme-toggle {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      border-radius: 999px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      font-size: 17px;
+      transition: all 0.3s ease;
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-2px);
+      background: var(--card-bg);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .nav-toggle span {
+      width: 22px;
+      height: 2px;
+      background: var(--text);
+      margin: 4px 0;
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(8px, 7px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(6px, -6px); }
+
+    .hero {
+      padding: 72px 0 42px;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .hero .container { max-width: 760px; }
+
+    .hero p {
+      color: var(--muted);
+      margin-top: 16px;
+    }
+
+    .contact-content {
+      padding: 48px 0 80px;
+    }
+
+    .contact-wrap {
+      max-width: 780px;
+      margin: 0 auto;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      border-radius: 16px;
+      box-shadow: var(--shadow);
+      padding: 30px;
   <meta name="description" content="Contact AIFutureTrendz for questions, collaboration ideas, and technical feedback." />
   <link rel="canonical" href="https://aifuturetrendz.com/contact.html" />
   <style>
@@ -66,6 +285,153 @@
     .quick-links {
       display: flex;
       flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .quick-links a,
+    .contact-wrap a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .quick-links a:hover,
+    .contact-wrap a:hover,
+    .contact-wrap a:focus-visible {
+      text-decoration: underline;
+    }
+
+    .contact-wrap section + section {
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-wrap p { color: var(--muted); }
+    .contact-wrap h2 { margin-bottom: 10px; }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 24px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      text-align: center;
+      padding: 24px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 36px; }
+      h2 { font-size: 28px; }
+      .nav-toggle { display: flex; order: 2; }
+      .nav-links {
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        right: 0;
+        max-height: 0;
+        overflow: hidden;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        transition: max-height 0.3s ease;
+      }
+      .nav-links.active { max-height: 280px; }
+      .nav-links a { width: 100%; padding: 12px 24px; }
+      .theme-toggle { order: 3; }
+      .contact-wrap { padding: 24px; }
+    }
+
+    @media (max-width: 640px) {
+      .container { padding: 0 16px; }
+      .contact-wrap { padding: 20px; }
+    }
+  </style>
+  <script src="seo.js"></script>
+</head>
+<body>
+  <script>if (localStorage.getItem('theme') === 'dark') document.body.classList.add('dark');</script>
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="index.html" aria-label="AI Future Trendz home">
+          <img loading="lazy" decoding="async" width="118" height="32" src="assets/aft-logo.svg" alt="AI Future Trendz logo" />
+        </a>
+        <div class="nav-controls">
+          <div class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="articles.html">Articles</a>
+            <a href="#">Trends</a>
+            <a href="#">About</a>
+            <a href="contact.html" class="active">Contact</a>
+          </div>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>If you have questions, feedback, collaboration ideas, or topic suggestions, feel free to reach out.</p>
+    </div>
+  </section>
+
+  <main class="contact-content">
+    <div class="container">
+      <div class="contact-wrap">
+        <nav class="quick-links" aria-label="Contact section shortcuts">
+          <a href="#contact-information">Contact Information</a>
+          <a href="#collaboration-suggestions">Collaboration &amp; Suggestions</a>
+        </nav>
+
+        <section id="contact-information">
+          <h2>Contact Information</h2>
+          <p>
+            <strong>Email:</strong>
+            <a href="mailto:sajid.hmdrd@gmail.com">sajid.hmdrd@gmail.com</a>
+          </p>
+
+          <p>
+            <strong>LinkedIn:</strong>
+            <a href="https://www.linkedin.com/in/sajid-sj/" target="_blank" rel="noopener noreferrer">Sajid Khan on LinkedIn</a>
+          </p>
+        </section>
+
+        <section id="collaboration-suggestions">
+          <h2>Collaboration &amp; Suggestions</h2>
+          <p>We welcome:</p>
+          <ul>
+            <li>AI-related discussions</li>
+            <li>Content suggestions</li>
+            <li>Collaboration opportunities</li>
+            <li>Technical feedback</li>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    (C) 2026 AI Future Trendz. All rights reserved.
+  </footer>
+
+  <script src="theme.js" defer></script>
       gap: 12px;
       margin-bottom: 18px;
     }
