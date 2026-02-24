@@ -132,10 +132,10 @@
     }
 
     .nav-links a:hover,
-    .nav-links .active { color: var(--primary); }
+    .nav-links a.active { color: var(--primary); }
 
     .nav-links a:hover::after,
-    .nav-links .active::after { transform: scaleX(1); }
+    .nav-links a.active::after { transform: scaleX(1); }
 
     .theme-toggle {
       border: 1px solid var(--border);
@@ -323,6 +323,7 @@
       }
       .nav-links.active { max-height: 280px; }
       .nav-links a { width: 100%; padding: 12px 24px; }
+      .nav-links a::after { display: none; }
       .theme-toggle { order: 3; }
       input[type="email"] { margin: 0 0 12px; }
     }
