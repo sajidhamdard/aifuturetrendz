@@ -7,6 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
+      --header-height: 72px;
       --bg: #ffffff;
       --text: #1a1a1a;
       --text-secondary: #555555;
@@ -31,11 +32,13 @@
       background: var(--bg);
       color: var(--text);
       line-height: 1.6;
+      padding-top: var(--header-height);
       transition: background-color 0.3s ease, color 0.3s ease;
     }
     header {
-      position: sticky;
+      position: fixed;
       top: 0;
+      left: 0;
       width: 100%;
       background: var(--header-bg);
       backdrop-filter: blur(10px);
@@ -44,8 +47,9 @@
       transition: background-color 0.3s ease, border-color 0.3s ease;
     }
     .container { max-width: 1200px; margin: auto; padding: 0 20px; }
-    nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; }
+    nav { display: flex; justify-content: space-between; align-items: center; min-height: var(--header-height); }
     .logo { font-weight: 700; font-size: 20px; color: var(--link); text-decoration: none; }
+    .nav-controls { display: flex; align-items: center; margin-left: auto; gap: 16px; }
     .nav-links { display: flex; align-items: center; }
     .nav-links a {
       margin-left: 24px;
@@ -72,7 +76,7 @@
     .theme-toggle:hover { background: var(--card-bg); }
 
     .hero {
-      padding: 88px 0 48px;
+      padding: 64px 0 48px;
       text-align: center;
       background: radial-gradient(circle at top, rgba(37,99,235,0.16), transparent 40%);
     }
@@ -128,10 +132,10 @@
       .article-content h2 { font-size: 21px; }
     }
     @media (max-width: 540px) {
-      nav { flex-direction: column; gap: 10px; }
-      .nav-links { display: flex; flex-wrap: wrap; justify-content: center; }
-      .nav-links a { margin: 0 10px; }
-      .theme-toggle { margin-left: 0; }
+      nav { align-items: flex-start; }
+      .nav-controls { width: 100%; justify-content: space-between; gap: 10px; }
+      .nav-links { display: flex; flex-wrap: wrap; }
+      .nav-links a { margin: 0 10px 0 0; }
       .articles-grid { grid-template-columns: 1fr; }
     }
   </style>
@@ -142,14 +146,16 @@
     <div class="container">
       <nav>
         <a class="logo" href="index.html">AI FUTURE TRENDZ</a>
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a class="active" href="articles.html">Articles</a>
-          <a href="#">Trends</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
+        <div class="nav-controls">
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a class="active" href="articles.html">Articles</a>
+            <a href="#">Trends</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+          </div>
+          <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
         </div>
-        <button class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Switch to dark mode">🌙</button>
       </nav>
     </div>
   </header>
