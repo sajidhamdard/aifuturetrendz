@@ -128,6 +128,8 @@
 .btn-primary {
   background: var(--primary);
   color: white;
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.35);
 }
 
 .btn-primary:hover {
@@ -137,6 +139,31 @@
 .btn-outline {
   border: 1px solid var(--border);
   color: var(--text-main);
+}
+    .social-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .social-section {
+    flex-direction: column;
+  }
+
+  .follow-btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
 }
 
 /* 🔥 Mobile Fix */
@@ -335,11 +362,18 @@
         <h2>The Weekly Brief is Launching Soon</h2>
         <p>We're perfecting our high-signal AI breakdowns. <br>Follow us on social media to be the first to know when we go live.</p>
         
-        <div class="social-links">
-          <a href="#" class="social-icon" title="LinkedIn">in</a>
-          <a href="#" class="social-icon" title="X (Twitter)">𝕏</a>
-          <a href="about.html" class="btn btn-primary" style="margin-left: 10px;">Follow Our Journey</a>
-        </div>
+       <div class="social-section">
+
+  <div class="social-links">
+    <a href="#" class="social-icon" title="LinkedIn">in</a>
+    <a href="#" class="social-icon" title="X (Twitter)">𝕏</a>
+  </div>
+
+  <a href="about.html" class="btn btn-primary follow-btn">
+    Follow Our Journey
+  </a>
+
+</div>
       </div>
     </div>
   </section>
