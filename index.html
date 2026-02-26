@@ -148,11 +148,12 @@
     .read-more { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.9rem; }
     .date { font-size: 0.85rem; color: var(--text-muted); }
 
-    /* NEWSLETTER */
+    /* Coming Soon" */
     .newsletter-section { padding: 100px 0; }
     .newsletter-box { background: var(--bg-light); border: 1px solid var(--border); padding: 60px 40px; border-radius: 32px; text-align: center; border-bottom: 4px solid var(--primary); }
-    .newsletter-form { display: flex; gap: 12px; max-width: 500px; margin: 2rem auto 0; }
-    .newsletter-form input { flex: 1; padding: 14px 20px; border-radius: 10px; border: 1px solid var(--border); background: var(--bg-light); color: var(--text-main); }
+    .social-links { display: flex; gap: 15px; justify-content: center; margin-top: 2rem; }
+    .social-icon { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: var(--bg-section); border: 1px solid var(--border); text-decoration: none; color: var(--text-main); font-size: 1.2rem; transition: 0.3s; }
+    .social-icon:hover { background: var(--primary); color: white; border-color: var(--primary); }
 
     footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
 
@@ -284,15 +285,18 @@
 </div>
   </section>
 
-  <section id="newsletter" class="newsletter-section">
+ <section id="newsletter" class="newsletter-section">
     <div class="container">
       <div class="newsletter-box">
-        <h2>Stay Ahead in AI</h2>
-        <p>Join 5,000+ IT professionals receiving one high-signal AI breakdown every week.</p>
-        <form class="newsletter-form">
-          <input type="email" placeholder="Enter your email address" required>
-          <button type="submit" class="btn btn-primary">Subscribe Now</button>
-        </form>
+        <span class="badge" style="margin: 0 auto 1rem; display: table;">Coming Soon</span>
+        <h2>The Weekly Brief is Launching Soon</h2>
+        <p>We're perfecting our high-signal AI breakdowns. <br>Follow us on social media to be the first to know when we go live.</p>
+        
+        <div class="social-links">
+          <a href="#" class="social-icon" title="LinkedIn">in</a>
+          <a href="#" class="social-icon" title="X (Twitter)">𝕏</a>
+          <a href="about.html" class="btn btn-primary" style="margin-left: 10px;">Follow Our Journey</a>
+        </div>
       </div>
     </div>
   </section>
