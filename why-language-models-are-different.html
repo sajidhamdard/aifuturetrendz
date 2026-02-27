@@ -174,6 +174,62 @@
       .logo-text span {
       color: var(--primary);
       }
+      /* Table Container for Horizontal Scrolling on Mobile */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 40px 0;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--bg-light);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+thead {
+  background: var(--bg-section);
+  border-bottom: 2px solid var(--border);
+}
+
+th {
+  padding: 16px 20px;
+  font-weight: 700;
+  color: var(--text-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+
+td {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-main);
+  opacity: 0.9;
+  vertical-align: middle;
+}
+
+/* Subtle Hover Effect */
+tbody tr:hover {
+  background: rgba(37, 99, 235, 0.04); /* Very light primary tint */
+}
+
+/* Specific styling for the first column (Model Names) */
+td:first-child {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* Responsive adjustment */
+@media (max-width: 600px) {
+  th, td {
+    padding: 12px 15px;
+    font-size: 0.85rem;
+  }
+}
     </style>
   </head>
   <body>
@@ -231,6 +287,62 @@
             <p>Understanding these differences helps users make informed decisions. Instead of choosing a model based on popularity, it becomes possible to choose based on performance, cost, and specific needs.</p>
             <p>All modern language models are built on similar principles. What separates them is how those principles are scaled, trained, and deployed.</p>
           </article>
+          <div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Model</th>
+        <th>Strength</th>
+        <th>Primary Use Case</th>
+        <th>Context Window</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>GPT-4o</td>
+        <td>Fast Reasoning & Multimodal</td>
+        <td>Production Apps & AI Assistants</td>
+        <td>Standard (128k)</td>
+      </tr>
+      <tr>
+        <td>GPT-4 Turbo</td>
+        <td>Structured Logic & Coding</td>
+        <td>SaaS Products & Complex Workflows</td>
+        <td>Standard (128k)</td>
+      </tr>
+      <tr>
+        <td>Claude 3.5 Sonnet</td>
+        <td>Balanced Performance & Safety</td>
+        <td>Business Automation & Writing</td>
+        <td>Large (200k)</td>
+      </tr>
+      <tr>
+        <td>Claude 3 Opus</td>
+        <td>Deep Reasoning & Long-Context Stability</td>
+        <td>Research, Legal & Enterprise Docs</td>
+        <td>Large (200k)</td>
+      </tr>
+      <tr>
+        <td>Claude Opus 4.5 / 4.6</td>
+        <td>Frontier-Level Reasoning & Agentic Tasks</td>
+        <td>Enterprise AI Agents & Complex Systems</td>
+        <td>Large+ (200k+)</td>
+      </tr>
+      <tr>
+        <td>Gemini 1.5 Pro</td>
+        <td>Ultra-Large Context & Multimodality</td>
+        <td>Massive File & Video Analysis</td>
+        <td>Ultra-Large (1M+)</td>
+      </tr>
+      <tr>
+        <td>LLaMA 3 (70B)</td>
+        <td>Open-Source & Customizable</td>
+        <td>Self-hosting & Fine-tuning</td>
+        <td>Variable (8k–32k)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
           <h2 style="margin-top: 60px;">FAQ</h2>
           <div class="faq-item">
             <h3>Are all language models built using the same technology?</h3>
