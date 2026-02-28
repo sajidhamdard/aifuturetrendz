@@ -276,6 +276,38 @@ td:first-child {
             <h2>Cost</h2>
             <p>Larger models require more powerful hardware, often multiple high-end GPUs. Running these systems continuously is expensive. In addition, companies need to recover the cost of training, which may involve months of compute on massive clusters.</p>
             <p>When you use an API, you are usually charged per token. You pay for the tokens in your input and the tokens generated in the output. Longer prompts and longer responses mean higher cost. More advanced models typically charge more per token because they require more compute per request.</p>
+            <div class="table-wrapper>
+              <table>
+  <thead>
+    <tr>
+      <th>Model Tier</th>
+      <th>Average Input Cost (per 1M tokens)</th>
+      <th>Average Output Cost (per 1M tokens)</th>
+      <th>Best Use Case</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Frontier (e.g., GPT-5 Pro)</td>
+      <td>$15.00 - $20.00</td>
+      <td>$60.00 - $160.00</td>
+      <td>High-stakes reasoning, novel discovery</td>
+    </tr>
+    <tr>
+      <td>Mid-Range (e.g., Claude 4 Sonnet)</td>
+      <td>$3.00</td>
+      <td>$15.00</td>
+      <td>Enterprise automation, coding</td>
+    </tr>
+    <tr>
+      <td>Efficient (e.g., Gemini 2.5 Flash)</td>
+      <td>$0.10</td>
+      <td>$0.30</td>
+      <td>High-volume chatbots, translation</td>
+    </tr>
+  </tbody>
+</table>  
+            </div>
             <h2>Performance and Optimization</h2>
             <p>Performance varies depending on optimization goals. Some models are optimized for speed. These models respond quickly but may provide slightly less detailed reasoning. Others are optimized for depth and accuracy, resulting in slower responses but stronger outputs.</p>
             <h2>Examples of Well-Known Models</h2>
