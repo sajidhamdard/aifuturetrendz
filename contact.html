@@ -136,6 +136,9 @@
       .collaboration-list li::before { content: "•"; color: var(--primary); font-weight: 800; font-size: 1.5rem; }
       .collaboration-list li:last-child { border-bottom: none; }
       footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
+      footer a { color: var(--text-muted); text-decoration: none; }
+      footer a:hover { color: var(--primary); }
+      .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
       @media (max-width: 768px) {
       .hero h1 { font-size: 2.5rem; }
       .nav-toggle { display: flex; }
@@ -222,7 +225,14 @@
       </div>
     </main>
     <footer>
-      <div class="container">(C) 2026 AI Future Trendz. All rights reserved.</div>
+      <div class="container">
+        <p>© 2026 AI Future Trendz. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
     </footer>
     <script src="scripts/theme.js" defer></script>
   </body>
