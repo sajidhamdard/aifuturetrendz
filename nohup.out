@@ -1,0 +1,10 @@
+127.0.0.1 - - [02/Mar/2026 18:43:36] "HEAD /about.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:39] "GET /about.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:39] "GET /scripts/seo.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:39] "GET /assets/logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:39] "GET /scripts/theme.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:39] "GET /assets/favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:54] "GET /contact.html HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:54] "GET /scripts/seo.js HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:54] "GET /assets/logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [02/Mar/2026 18:43:54] "GET /scripts/theme.js HTTP/1.1" 200 -
