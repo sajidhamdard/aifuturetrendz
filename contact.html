@@ -61,9 +61,11 @@
       --text-main: #0f172a;
       --text-muted: #64748b;
       --bg-light: #ffffff;
-      --bg-section: #fafafa;
+      --bg-section: #f8fafc;
       --border: #e2e8f0;
-      --gradient: linear-gradient(90deg, #2563eb, #9333ea);
+      --gradient: linear-gradient(135deg, #2563eb, #9333ea);
+      --shadow: 0 4px 24px rgba(37,99,235,0.07);
+      --shadow-hover: 0 8px 32px rgba(37,99,235,0.13);
       }
       body.dark {
       --text-main: #f1f5f9;
@@ -71,6 +73,8 @@
       --bg-light: #0f172a;
       --bg-section: #1e293b;
       --border: #334155;
+      --shadow: 0 4px 24px rgba(0,0,0,0.3);
+      --shadow-hover: 0 8px 32px rgba(0,0,0,0.4);
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body { 
@@ -78,10 +82,10 @@
       color: var(--text-main); 
       line-height: 1.7; 
       background: var(--bg-light); 
-      transition: background 0.3s ease; 
+      transition: background 0.3s ease, color 0.3s ease; 
       }
       .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-      /* Navigation - Glassmorphism */
+      /* Navigation */
       header { 
       border-bottom: 1px solid var(--border); 
       padding: 1rem 0; 
@@ -92,12 +96,10 @@
       z-index: 1000; 
       }
       nav { display: flex; justify-content: space-between; align-items: center; }
-      .logo { font-weight: 800; font-size: 1.5rem; color: var(--text-main); text-decoration: none; }
-      .logo span { color: var(--primary); }
       .nav-controls { display: flex; align-items: center; gap: 1rem; }
       .nav-links { display: flex; gap: 1.5rem; align-items: center; }
-      .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; }
-      .nav-links a.active { color: var(--primary); }
+      .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
+      .nav-links a:hover, .nav-links a.active { color: var(--primary); }
       .theme-toggle, .nav-toggle { 
       background: none; border: 1px solid var(--border); 
       padding: 8px; border-radius: 8px; cursor: pointer; color: var(--text-main); 
@@ -105,48 +107,161 @@
       .nav-toggle { display: none; flex-direction: column; gap: 4px; }
       .nav-toggle span { width: 20px; height: 2px; background: var(--text-main); }
       /* Hero Section */
-      .hero { padding: 80px 0; text-align: center; background: radial-gradient(circle at 10% 20%, rgba(37,99,235,0.05) 0%, transparent 40%); }
-      .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1rem; letter-spacing: -0.04em; font-weight: 800; }
-      .hero p { max-width: 600px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem; }
-      /* Contact Content Layout */
-      .contact-wrap { max-width: 800px; margin: 60px auto; }
-      .contact-section { 
-      background: var(--bg-light); 
-      padding: 40px; 
-      border-radius: 16px; 
-      border: 1px solid var(--border); 
-      border-left: 4px solid var(--primary); /* Intelligence bar accent */
-      margin-bottom: 30px;
-      transition: transform 0.3s ease;
+      .hero {
+      padding: 90px 0 70px;
+      text-align: center;
+      background: radial-gradient(ellipse at 60% 0%, rgba(37,99,235,0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse at 10% 100%, rgba(147,51,234,0.05) 0%, transparent 50%);
       }
-      .contact-section:hover { transform: translateX(8px); }
-      .contact-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 20px; color: var(--text-main); }
-      .contact-section p { margin-bottom: 15px; font-size: 1.05rem; }
-      .contact-section strong { color: var(--primary); }
-      .contact-section a { color: var(--primary); text-decoration: none; font-weight: 600; }
-      .contact-section a:hover { text-decoration: underline; }
-      .collaboration-list { list-style: none; padding-top: 10px; }
-      .collaboration-list li { 
-      padding: 10px 0; 
-      border-bottom: 1px solid var(--border); 
-      display: flex; 
-      align-items: center; 
-      gap: 10px; 
+      .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(37,99,235,0.08);
+      color: var(--primary);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(37,99,235,0.15);
+      margin-bottom: 1.5rem;
       }
-      .collaboration-list li::before { content: "•"; color: var(--primary); font-weight: 800; font-size: 1.5rem; }
-      .collaboration-list li:last-child { border-bottom: none; }
+      .hero h1 { font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.2rem; letter-spacing: -0.04em; font-weight: 800; }
+      .hero h1 .gradient-text { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+      .hero p { max-width: 580px; margin: 0 auto; color: var(--text-muted); font-size: 1.15rem; }
+      /* Contact layout */
+      .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 32px;
+      max-width: 1000px;
+      margin: 0 auto 80px;
+      }
+      /* Contact Form */
+      .form-card {
+      background: var(--bg-section);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow);
+      }
+      .form-card h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 6px; }
+      .form-subtitle { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 28px; }
+      .form-group { margin-bottom: 20px; }
+      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+      .form-group label { display: block; font-size: 0.875rem; font-weight: 600; color: var(--text-main); margin-bottom: 7px; }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: var(--bg-light);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(37,99,235,0.1); }
+      .form-group textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+      .form-group select { cursor: pointer; }
+      .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      }
+      .submit-btn:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,99,235,0.25); }
+      /* Contact Info Sidebar */
+      .contact-sidebar { display: flex; flex-direction: column; gap: 20px; }
+      .info-card {
+      background: var(--bg-section);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      transition: all 0.25s;
+      }
+      .info-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+      .info-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+      .info-icon {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      }
+      .info-icon.email { background: rgba(37,99,235,0.1); }
+      .info-icon.linkedin { background: rgba(10,102,194,0.1); }
+      .info-icon.collab { background: rgba(147,51,234,0.1); }
+      .info-card h3 { font-size: 1rem; font-weight: 700; }
+      .info-card p, .info-card a {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      }
+      .info-card a { color: var(--primary); font-weight: 600; }
+      .info-card a:hover { text-decoration: underline; }
+      .collab-list { list-style: none; margin-top: 4px; }
+      .collab-list li { 
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      }
+      .collab-list li::before { content: "·"; color: var(--primary); font-weight: 900; font-size: 1.2rem; line-height: 1.4; }
+      .collab-list li:last-child { border-bottom: none; }
+      /* Response time badge */
+      .response-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(34,197,94,0.1);
+      color: #16a34a;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 999px;
+      margin-top: 10px;
+      }
+      body.dark .response-badge { background: rgba(34,197,94,0.15); color: #4ade80; }
       footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid var(--border); }
       footer a { color: var(--text-muted); text-decoration: none; }
       footer a:hover { color: var(--primary); }
       .footer-links { display: flex; justify-content: center; gap: 1.5rem; margin-top: 0.5rem; flex-wrap: wrap; }
+      @media (max-width: 900px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      }
       @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
+      .hero h1 { font-size: 2.4rem; }
+      .form-row { grid-template-columns: 1fr; }
       .nav-toggle { display: flex; }
       .nav-links { display: none; }
       .nav-links.active { 
       display: flex; position: absolute; top: 100%; left: 0; width: 100%; 
       background: var(--bg-light); flex-direction: column; padding: 20px; border-bottom: 1px solid var(--border);
       }
+      .form-card { padding: 28px 20px; }
       }
       .logo-container {
       display: flex;
@@ -155,18 +270,9 @@
       gap: 12px;
       }
       .logo-img {
-      height: 40px; /* Adjusted based on mockup */
+      height: 40px;
       width: auto;
-      border-radius: 8px; /* Clean circular or slightly rounded look */
-      }
-      .logo-text {
-      font-weight: 800;
-      font-size: 1.4rem;
-      color: var(--text-main);
-      letter-spacing: -0.5px;
-      }
-      .logo-text span {
-      color: var(--primary);
+      border-radius: 8px;
       }
     </style>
   </head>
@@ -192,35 +298,93 @@
       </div>
     </header>
     <main>
+      <!-- Hero -->
       <section class="hero">
         <div class="container">
-          <h1>Get in <span style="color:var(--primary)">Touch</span></h1>
-          <p>Whether you have a technical question or a high-level collaboration idea, we're ready to discuss the future of AI with you.</p>
+          <div class="hero-badge">✉️ Contact</div>
+          <h1>Let's <span class="gradient-text">connect</span></h1>
+          <p>Have a question, a collaboration idea, or just want to talk AI? Drop us a message and we'll get back to you promptly.</p>
         </div>
       </section>
+
       <div class="container">
-        <div class="contact-wrap">
-          <section class="contact-section">
-            <h2>Contact Information</h2>
-            <p>
-              <strong>Email:</strong>
+        <div class="contact-layout">
+
+          <!-- Contact Form -->
+          <div class="form-card">
+            <h2>Send a Message</h2>
+            <p class="form-subtitle">Fill out the form below and we'll respond within 1–2 business days.</p>
+            <form action="https://formspree.io/f/contact" method="POST" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="first-name">First Name</label>
+                  <input type="text" id="first-name" name="first_name" placeholder="Jane" required />
+                </div>
+                <div class="form-group">
+                  <label for="last-name">Last Name</label>
+                  <input type="text" id="last-name" name="last_name" placeholder="Smith" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
+                  <option value="" disabled selected>Select a topic…</option>
+                  <option value="general">General Question</option>
+                  <option value="collaboration">Collaboration Opportunity</option>
+                  <option value="content">Content Suggestion</option>
+                  <option value="feedback">Feedback</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message →</button>
+            </form>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="contact-sidebar">
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon email">📧</div>
+                <h3>Email Us</h3>
+              </div>
+              <p>Prefer email? Reach us directly at:</p>
               <a href="mailto:sajid.hmdrd@gmail.com">sajid.hmdrd@gmail.com</a>
-            </p>
-            <p>
-              <strong>LinkedIn:</strong>
-              <a href="https://www.linkedin.com/in/sajid-sj/" target="_blank" rel="noopener noreferrer">Sajid Khan</a>
-            </p>
-          </section>
-          <section class="contact-section">
-            <h2>Collaboration & Suggestions</h2>
-            <p>We actively look for partnerships and feedback in the following areas:</p>
-            <ul class="collaboration-list">
-              <li>Enterprise AI integration strategies</li>
-              <li>Deep-dive content requests on LLMs</li>
-              <li>Tool reviews and technical feedback</li>
-              <li>Strategic collaboration opportunities</li>
-            </ul>
-          </section>
+              <div class="response-badge">⚡ Usually responds within 24 hrs</div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon linkedin">💼</div>
+                <h3>Connect on LinkedIn</h3>
+              </div>
+              <p>Follow for AI insights, updates, and industry commentary.</p>
+              <a href="https://www.linkedin.com/in/sajid-sj/" target="_blank" rel="noopener noreferrer">Sajid Khan → LinkedIn</a>
+            </div>
+
+            <div class="info-card">
+              <div class="info-card-header">
+                <div class="info-icon collab">🤝</div>
+                <h3>Collaboration Areas</h3>
+              </div>
+              <ul class="collab-list">
+                <li>Enterprise AI integration strategies</li>
+                <li>Deep-dive content on LLMs &amp; GenAI</li>
+                <li>Tool reviews and technical feedback</li>
+                <li>Guest posts &amp; expert contributions</li>
+                <li>Strategic partnership opportunities</li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
     </main>
