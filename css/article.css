@@ -1,7 +1,9 @@
 h1 { font-size: 40px; font-weight: 700; line-height: 1.2; }
-h2 { font-size: 30px; font-weight: 600; line-height: 1.25; margin: 44px 0 18px; }
-h3 { font-size: 22px; font-weight: 600; line-height: 1.35; margin: 24px 0 12px; }
+h2 { font-size: 30px; font-weight: 600; line-height: 1.25; margin: 44px 0 18px; color: var(--primary); }
+h3 { font-size: 22px; font-weight: 600; line-height: 1.35; margin: 24px 0 12px; color: var(--text-main); }
 p { font-size: 17px; font-weight: 400; line-height: 1.7; margin-bottom: 18px; }
+ul, ol { padding-left: 1.5rem; margin-bottom: 18px; }
+li { margin-bottom: 8px; font-size: 17px; line-height: 1.7; }
 
 .article-container { max-width: 900px; margin: 0 auto; padding: 48px 20px; }
 .article-hero-image {
