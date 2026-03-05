@@ -141,10 +141,9 @@
           <p>Every token requires computation. The model reads each token, processes it, and predicts the next one step by step. These calculations run on powerful GPUs inside data centers. These machines are expensive to buy, maintain, and power. More tokens mean more calculations. More calculations mean higher cost.</p>
           <h2>Input Tokens and Output Tokens</h2>
           <p>There are two sides to token usage. Input tokens are what you send. Output tokens are what the AI generates back.</p>
-          <p>If you paste a long document, you pay for the tokens in that document and the tokens in the response. Longer conversations also increase token usage because the model re-reads previous context to maintain continuity.</p>
           <p>For example, many AI APIs price usage per million tokens. A lightweight model might cost around $0.10–$0.50 per million input tokens, while larger reasoning models can cost several dollars per million tokens. </p>
 
-<p>This means a short chat message may cost only a fraction of a cent, while processing large documents or running AI agents repeatedly can add up quickly.</p>
+<p>This means a short chat message may cost only a fraction of a cent, while processing large documents or running AI agents repeatedly increase token usage because the model re-reads previous context to maintain continuity.</p>
             <h2>Model Size and Cost</h2>
           <p>Not all models cost the same to run. Larger models perform more calculations per token. They are better at complex reasoning and multi-step problems. But they are also more expensive to operate. Smaller models are cheaper and faster, but may struggle with harder tasks.</p>
           <h2>Training Cost vs Usage Cost</h2>
