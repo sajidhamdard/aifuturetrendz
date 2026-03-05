@@ -131,19 +131,18 @@
 <p>If you’ve spent any time using ChatGPT, Claude, or Gemini, you’ve likely encountered the term "token." For developers, it’s the unit they’re billed for. For casual users, it’s the invisible limit that occasionally tells them they’ve reached their message cap.</p>
           <p>But why do we pay for tokens instead of a flat monthly fee like Netflix or Spotify? The answer lies in the unique economics of AI infrastructure in 2026.</p>
           <h2>What Are Tokens?</h2>
-          <p>Before we talk about the why, we need to understand the what. AI models do not read words like humans. They process numerical chunks of text.</p>
+          <p>Before understanding the cost, let's understand what tokens actually are.AI models do not read words like humans. They process numerical chunks of text.</p>
           <p>When you type something into an AI model, the system does not read words the way humans do. Instead, it breaks the text into small units called tokens.</p>
             <p>A token can be a word, part of a word, a number, or punctuation. On average, one token is roughly 0.75 words or about four characters in English. For example, the word “economics” may be a single token, while longer or unusual words may be split into multiple tokens.</p>
             <p> The longer your message, the more tokens are created. The longer the response, the more tokens are generated. Tokens are simply the unit used to measure how much text is processed.</p>
             
           <h2>Why Tokens Cost Money</h2>
-          <p>The main reason tokens cost money is hardware intensity. Unlike a search engine that retrieves existing information, an AI model generates new text from scratch.</p>
+          <p>The main reason tokens cost money is the computational power required to run AI models. Unlike a search engine that retrieves existing information, an AI model generates new text from scratch.</p>
           <p>Every token requires computation. The model reads each token, processes it, and predicts the next one step by step. These calculations run on powerful GPUs inside data centers. These machines are expensive to buy, maintain, and power. More tokens mean more calculations. More calculations mean higher cost.</p>
           <h2>Input Tokens and Output Tokens</h2>
           <p>There are two sides to token usage. Input tokens are what you send. Output tokens are what the AI generates back.</p>
           <p>For example, many AI APIs price usage per million tokens. A lightweight model might cost around $0.10–$0.50 per million input tokens, while larger reasoning models can cost several dollars per million tokens. </p>
-
-<p>This means a short chat message may cost only a fraction of a cent, while processing large documents or running AI agents repeatedly increase token usage because the model re-reads previous context to maintain continuity.</p>
+<p>This means a short chat message may cost only a fraction of a cent. However, processing large documents or running AI agents repeatedly can increase token usage quickly, especially because the model re-reads previous conversation context to maintain continuity.</p>
             <h2>Model Size and Cost</h2>
           <p>Not all models cost the same to run. Larger models perform more calculations per token. They are better at complex reasoning and multi-step problems. But they are also more expensive to operate. Smaller models are cheaper and faster, but may struggle with harder tasks.</p>
           <h2>Training Cost vs Usage Cost</h2>
@@ -152,14 +151,14 @@
           <h2>Why Output Costs More</h2>
           <p>Output tokens are usually more expensive than input tokens because text generation happens sequentially. When the model generates a response, it predicts one token at a time.</p>
             <p>For every new token, the model must process the entire conversation context again to decide what comes next. This repeated computation makes generating text more expensive than simply reading input tokens.</p>
-          <h2>Will Tokens Ever Be Free?</h2>
-          <p>Token costs are dropping quickly as hardware improves and models become more efficient. Newer lightweight models cost a fraction of earlier versions.</p>
+          <h2>Why Token Pricing Matters?</h2>
+          <p>Token costs are dropping quickly as hardware improves and models become more efficient. Modern lightweight models now cost only a fraction of what earlier versions required.</p>
           <p>For example, GPT-5 Nano and Gemini Flash models now cost a fraction of what their predecessors did. If you are just chatting casually, token cost may not seem important. But if you are building an AI product or running AI at scale, token usage directly affects your expenses. 
 However, as models get cheaper, we tend to use them for more complex tasks—like "Agentic" workflows where an AI might think for ten minutes to solve a coding bug.
 </p>
           <p>Token pricing ensures that a heavy user running thousands of complex queries does not overwhelm the system for everyone else.</p>
           <h2>The Bottom Line</h2>
-          <p>Tokens cost money because intelligence is currently a manufactured commodity. It requires raw materials like data, massive data centers to process it, and large amounts of energy.</p>
+          <p>Tokens cost money because AI token pricing reflects the real cost of computation. It requires raw materials like data, massive data centers to process it, and large amounts of energy.</p>
           <p>AI may feel magical, but behind every answer are thousands of GPUs, massive data centers, and large amounts of energy working in real time. Tokens are simply the unit that measures how much of that infrastructure you use.</p>
             <h2 style="margin-top: 60px;">FAQ</h2>
             <div class="faq-item">
