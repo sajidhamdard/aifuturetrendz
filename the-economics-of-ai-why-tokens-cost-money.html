@@ -150,8 +150,9 @@
           <p>Training a large model can cost over $100 million. That is a massive one-time investment. But the real ongoing expense is inference - serving millions of users every day.</p>
           <p>Training cost builds the model. Usage cost happens every time someone asks a question. Token pricing helps companies recover both training and operating expenses.</p>
           <h2>Why Output Costs More</h2>
-          <p>Output tokens usually cost more than input tokens. Input is efficient because the model can process your prompt almost all at once. Output is sequential. The model generates tokens one by one. Each new token requires processing everything that came before it. This makes generating text significantly more expensive than reading it.</p>
-          <h2>Why This Matters? Will Tokens Ever Be Free?</h2>
+          <p>Output tokens are usually more expensive than input tokens because text generation happens sequentially. When the model generates a response, it predicts one token at a time.</p>
+            <p>For every new token, the model must process the entire conversation context again to decide what comes next. This repeated computation makes generating text more expensive than simply reading input tokens.</p>
+          <h2>Will Tokens Ever Be Free?</h2>
           <p>Token costs are dropping quickly as hardware improves and models become more efficient. Newer lightweight models cost a fraction of earlier versions.</p>
           <p>For example, GPT-5 Nano and Gemini Flash models now cost a fraction of what their predecessors did. If you are just chatting casually, token cost may not seem important. But if you are building an AI product or running AI at scale, token usage directly affects your expenses. 
 However, as models get cheaper, we tend to use them for more complex tasks—like "Agentic" workflows where an AI might think for ten minutes to solve a coding bug.
