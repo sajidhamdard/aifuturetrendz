@@ -86,6 +86,52 @@
           a: "The biggest blocker is sustained capital and research commitment, not basic engineering capability."
         }
       ]
+    },
+    "what-is-artificial-intelligence-ai-simple-explanation-for-everyone.html": {
+      type: "article",
+      title: "What Is Artificial Intelligence (AI)? A Simple Explanation for Everyone | AI Guide",
+      headline: "What Is Artificial Intelligence (AI)? A Simple Explanation for Everyone",
+      description: "Artificial intelligence explained in simple language with everyday AI examples, types of AI, common myths, and why AI matters today.",
+      image: "https://aifuturetrendz.com/assets/language-models.png",
+      datePublished: "2026-03-13",
+      dateModified: "2026-03-13",
+      authorName: "Sajid Ali Khan",
+      related: [
+        {
+          href: "why-language-models-are-different.html",
+          text: "What Makes Language Models Different?"
+        },
+        {
+          href: "the-economics-of-ai-why-tokens-cost-money.html",
+          text: "The Economics of AI: Why Tokens Cost Money"
+        },
+        {
+          href: "articles.html",
+          text: "Browse all AI articles"
+        }
+      ],
+      faqs: [
+        {
+          q: "Is AI the same as machine learning?",
+          a: "No. AI is the bigger field, while machine learning is one approach inside AI that helps systems improve by learning from data."
+        },
+        {
+          q: "Is AI dangerous?",
+          a: "AI can create risks if it is used badly or without oversight, but it is not automatically dangerous. Like any powerful tool, it depends on how people design and use it."
+        },
+        {
+          q: "Can AI replace humans?",
+          a: "AI can automate some tasks, especially repetitive ones, but people are still needed for judgment, empathy, creativity, leadership, and accountability."
+        },
+        {
+          q: "Do I already use AI in everyday life?",
+          a: "Yes. If you use maps, search suggestions, streaming recommendations, spam filters, or voice assistants, you are already using AI-powered systems."
+        },
+        {
+          q: "Will AI keep becoming more common?",
+          a: "Yes. AI is likely to appear in more products and services because it helps companies improve speed, personalization, and decision-making."
+        }
+      ]
     }
   };
 
